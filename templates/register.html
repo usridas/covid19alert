@@ -1,0 +1,41 @@
+{% extends "layout.html "%}
+{% block content %}
+  <div class="content-section">
+       <form class="form-signin">
+        <label for="inputFirstName">First Name</label>
+        <input type="fn" name="inputFirstName" id="inputFirstName" class="form-control" placeholder="First Name" required autofocus>
+				 
+				<label for="inputLastName">Last Name</label>
+        <input type="ln" name="inputLastName" id="inputLastName" class="form-control" placeholder="Last Name" required autofocus>
+				 
+        <label for="inputEmail">Email address</label>
+        <input type="eml" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+				 
+        <label for="inputPassword">Password</label>
+        <input type="pwd" name="inputPassword" id="inputPassword" class="form-control" placeholder="Password" required>
+				 
+				 <label for="inputId">Student ID</label>
+        <input type="id" name="inputId" id="inputId" class="form-control" placeholder="ID" required>
+				 
+				 <label for="inputAdrs">Address</label>
+        <input type="adrs" name="inputAdrs" id="inputAdrs" class="form-control" placeholder="Address" >
+				 
+				 <label for="inputZip">Zip Code</label>
+        <input type="zc" name="inputZip" id="inputZip" class="form-control" placeholder="Zip Code" required>
+				 
+         <label for="inputUniv">University</label>
+        <input type="uniname" name="inputUniv" id="inputUniv" class="form-control" placeholder="University Name" required>
+				 
+				 <label for="inputColl">College</label>
+        <input type="coll" name="inputColl" id="inputColl" class="form-control" placeholder="College" required>
+				 
+				 <label></label>
+        <button id="regButton" class="btn btn-lg btn-primary btn-block" type="button">Sign up</button>
+				 
+      </form>
+  </div>
+  <div class="border-top pt-3">
+    <small class="text-muted">
+    </small>
+  </div>
+{% endblock content %}
