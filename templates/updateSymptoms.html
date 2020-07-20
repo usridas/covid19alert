@@ -1,0 +1,38 @@
+{% extends "layout.html "%}
+{% block content %}
+ 	<h1>Update Your Symptoms</h1>
+		<div class="column full_size unit demo-frame">
+			<div>
+				<h3>Do you feel any of the following symptoms? Check all the symptoms that you're currently experiencing.</h3>
+				<form action="/doupdate">
+					<input type="checkbox" id="symptom1" name="symptom1" value="Fever">
+  				<label for="symptom1">Fever/Chills</label><br>
+  				<input type="checkbox" id="symptom2" name="symptom2" value="Cough">
+  				<label for="symptom2">Cough</label><br>
+  				<input type="checkbox" id="symptom3" name="symptom3" value="ShortnessOfBreath">
+  				<label for="symptom3">Shortness of Breath</label><br><br>
+					<input type="checkbox" id="symptom4" name="symptom4" value="Fatigue">
+  				<label for="symptom4">Fatigue</label><br><br>
+					<input type="checkbox" id="symptom5" name="symptom5" value="MuscleAche">
+  				<label for="symptom5">Muscle or Body Ache</label><br><br>
+					<input type="checkbox" id="symptom6" name="symptom6" value="Headache">
+  				<label for="symptom6">Headache</label><br><br>
+					<input type="checkbox" id="symptom7" name="symptom7" value="LossOfTaste">
+  				<label for="symptom7">New Loss of Taste or Smell</label><br><br>
+					<input type="checkbox" id="symptom8" name="symptom8" value="SoreThroat">
+  				<label for="symptom8">Sore Throat</label><br><br>
+					<input type="checkbox" id="symptom9" name="symptom9" value="Congestion">
+  				<label for="symptom9">Congestion or Runny Nose</label><br><br>
+					<input type="checkbox" id="symptom10" name="symptom10" value="Nausea">
+  				<label for="symptom10">Nausea or Vomiting</label><br><br>
+					<input type="checkbox" id="symptom11" name="symptom11" value="Diarrhea">
+  				<label for="symptom11">Diarrhea</label><br><br>
+  				<input type="submit" value="Submit">
+				</form>
+			</div>
+		</div>
+
+		<div class="column full_size unit demo-frame">
+				<a id="logoutButton" class="btn btn-lg btn-primary btn-block" href="/logout">LOG OUT</a>
+		</div>
+{% endblock content %}

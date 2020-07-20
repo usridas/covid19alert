@@ -1,0 +1,18 @@
+{% extends "layout.html "%}
+{% block content %}
+  <div class="content-section">
+				<h1>Login</h1>
+       	<form class="form-signin" action="/doLogin" method="post">
+        <label for="inputEmail" class="sr-only">Email</label>
+        <input type="eml" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="pwd" name="inputPassword" id="inputPassword" class="form-control" placeholder="Password" required>
+        <button id="loginButton" class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+				 
+      </form>
+  </div>
+  <div class="border-top pt-3">
+    <small class="text-muted">
+    </small>
+  </div>
+{% endblock content %}
