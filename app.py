@@ -97,27 +97,27 @@ def doupdate():
 	_s9 = False
 	_s10 = False
 	_s11 = False
-	if (request.form['symptom1'] != null and request.form['symptom1'] == "on"):
+	if (request.form.get('symptom1') != None):
 		_s1 = True
-	if (request.form['symptom2'] != null and request.form['symptom2'] == "on"):
+	if (request.form.get('symptom2') != None):
 		_s2 = True
-	if (request.form['symptom3'] != null and request.form['symptom3'] == "on"):
+	if (request.form.get('symptom3') != None):
 		_s3 = True
-	if (request.form['symptom4'] != null and request.form['symptom4'] == "on"):
+	if (request.form.get('symptom4') != None):
 		_s4 = True
-	if (request.form['symptom5'] != null and request.form['symptom5'] == "on"):
+	if (request.form.get('symptom5') != None):
 		_s5 = True
-	if (request.form['symptom6'] != null and request.form['symptom6'] == "on"):
+	if (request.form.get('symptom6') != None):
 		_s6 = True
-	if (request.form['symptom7'] != null and request.form['symptom7'] == "on"):
+	if (request.form.get('symptom7') != None):
 		_s7 = True
-	if (request.form['symptom8'] != null and request.form['symptom8'] == "on"):
+	if (request.form.get('symptom8') != None):
 		_s8 = True
-	if (request.form['symptom9'] != null and request.form['symptom9'] == "on"):
+	if (request.form.get('symptom9') != None):
 		_s9 = True
-	if (request.form['symptom10'] != null and request.form['symptom10'] == "on"):
+	if (request.form.get('symptom10') != None):
 		_s10 = True
-	if (request.form['symptom11'] != null and request.form['symptom11'] == "on"):
+	if (request.form.get('symptom11') != None):
 		_s11 = True
 	
 	conn = mysql.connect()
@@ -127,7 +127,7 @@ def doupdate():
 	
 	if len(data) == 0:
 		conn.commit()
-		return json.dumps({'message':'Symptoms updated successfully!'})
+		return redirect('/home')
 	else:
 		return json.dumps({'error':str(data[0])})
 	return json.dumps({'html':'<span>Updated</span>'})
