@@ -8,9 +8,44 @@
 			<div>
 				<h1>Welcome!</h1>
 			</div>
+			
+			<div id="symps-holder">
+  			
+			</div>
 		</div>
 
 		<div class="column full_size unit demo-frame">
 				<a id="logoutButton" class="btn btn-lg btn-primary btn-block" href="/logout">LOG OUT</a>
 		</div>
+		<div class="column full_size unit demo-frame">
+				<a id="deleteButton" class="btn btn-lg btn-primary btn-block" href="/delete">DELETE ALL YOUR INFO</a>
+		</div>
+
+<script>
+	$(function() {
+        $.ajax({
+            url: '/displaysymptoms',
+            type: 'GET',
+            success: function(res) {
+                console.log(res);
+								var div = $('<div>')
+    							.attr('class', 'list-group')
+    							.append($('<a>')
+        						.attr('class', 'list-group-item active')
+        						.append($('<h4>')
+            					.attr('class', 'list-group-item-heading')));
+								var sympObj = JSON.parse(res);
+								var symp = '';
+								$.each(sympObj, function(idx, val) {
+									symp = $(div).clone();
+									$(symp).find('h4').text(val.sympName);
+									$('#symps-holder').append(symp);
+								});
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    });
+</script>
 {% endblock content %}

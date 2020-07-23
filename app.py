@@ -73,6 +73,38 @@ def logout():
 	session.pop("user", None)
 	return redirect('/')
 
+@app.route("/delete")
+def delete():
+	_eml = session.get('user')
+	conn = mysql.connect()
+	cursor = conn.cursor()
+	cursor.callproc('deleteRecords',(_eml,))
+	data = cursor.fetchall()
+	
+	if len(data) == 0:
+		conn.commit()
+		return redirect('/home')
+	else:
+		return json.dumps({'error':str(data[0])})
+	return json.dumps({'html':'<span>Deleted</span>'})
+
+@app.route("/displaysymptoms")
+def displaysymptoms():
+	_eml = session.get('user')
+	conn = mysql.connect()
+	cursor = conn.cursor()
+	cursor.callproc('getSymptoms',(_eml,))
+	data = cursor.fetchall()
+	
+	symps = []
+	for s in data:
+		symp_dict = {
+			'sympName': s[0]
+		}
+		symps.append(symp_dict)
+		
+	return json.dumps(symps)
+
 @app.route("/home")
 def home():
 		if (session.get('user')):
