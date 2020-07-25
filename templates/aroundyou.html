@@ -1,0 +1,17 @@
+{% extends "layout.html "%}
+{% block content %}
+ 	<h1>Epidemic Around You</h1>
+		<div class="column full_size unit demo-frame">
+			<div>
+				<h3>How many people are experiencing symptoms in your area?</h3>
+				<form method="POST" action="/doupdate">
+					<label for="searchzip">Zip Code:</label><br>
+          <input type="text" id="searchzip" name="searchzip"><br>
+				</form>
+			</div>
+		</div>
+
+		<div class="column full_size unit demo-frame">
+				<a id="logoutButton" class="btn btn-lg btn-primary btn-block" href="/logout">LOG OUT</a>
+		</div>
+{% endblock content %}
